@@ -15,7 +15,20 @@ struct VerticesWalks {
     string vertex2;
     int numWalks;
     bool operator<(const VerticesWalks& other) const {
-        return numWalks > other.numWalks;
+        if(numWalks > other.numWalks) {
+            return true;
+        }
+        if(numWalks == other.numWalks) {
+            if(vertex1 < other.vertex1) {
+                return true;
+            }
+            else if(vertex1 == other.vertex1) {
+                if(vertex2 < other.vertex2) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     bool operator==(const VerticesWalks& other) const {
         return numWalks == other.numWalks && vertex1 == other.vertex1 && vertex2 == other.vertex2;
