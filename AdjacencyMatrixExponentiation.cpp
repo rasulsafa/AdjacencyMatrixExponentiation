@@ -109,6 +109,7 @@ int main(int argc, char* argv[]) {
         }     
     }
     
+    deleteMatrix(resultMatrix, n);
     sort(outputEdgelist.begin(), outputEdgelist.end());
     outputEdgelist.erase(unique(outputEdgelist.begin(), outputEdgelist.end()), outputEdgelist.end());
     
