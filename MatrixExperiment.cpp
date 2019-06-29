@@ -85,14 +85,6 @@ int main(int argc, char* argv[]) {
     }
     
     // Perform two matrix multiplications to take the matrix to the third power (n*n)*n
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++)
-            cout << matrix[i][j];
-        cout << endl;
-    }
-    cout << endl;
-    
-    
     int** temp = matrixMultiply(matrix, matrix, n);
     for(int i = 0; i < n; i++)
         temp[i][i] = 0;
@@ -107,12 +99,6 @@ int main(int argc, char* argv[]) {
     for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++)
             resultMatrix[i][j] = max(resultMatrix[i][j], resultMatrix[j][i]);
-    
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++)
-            cout << resultMatrix[i][j];
-        cout << endl;
-    }
     
     
     deleteMatrix(temp, n);
@@ -137,7 +123,6 @@ int main(int argc, char* argv[]) {
     }
     
     deleteMatrix(resultMatrix, n);
-    cout << outputEdgelist.size() << endl;
     sort(outputEdgelist.begin(), outputEdgelist.end());
     outputEdgelist.erase(unique(outputEdgelist.begin(), outputEdgelist.end()), outputEdgelist.end());
     
