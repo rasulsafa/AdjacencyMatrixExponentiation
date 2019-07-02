@@ -94,7 +94,7 @@ int main(int argc, char* argv[]) {
     int** resultMatrix = matrixMultiply(matrix, temp, n);
     for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++)
-            resultMatrix[i][j] -= matrix[i][j];
+            resultMatrix[i][j] -= 2*matrix[i][j];
             
     for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++)
@@ -131,7 +131,6 @@ int main(int argc, char* argv[]) {
         cout << vw.vertex1 << "\t" << vw.vertex2 << "\t" << vw.numWalks << endl;
     }
 }
-
 void deleteMatrix(int** matrix, int n) {
     for(int i = 0; i < n; i++)
         delete[] matrix[i];
